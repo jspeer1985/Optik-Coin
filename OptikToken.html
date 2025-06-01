@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Optik Token (OPTIK) | Next-Gen DeFi Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Optik Token (OPTIK) — Deflationary DeFi platform with mining, staking, airdrop, rewards, 3% transaction fee for development, and a free GPT-powered AI assistant for investors.">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    :root {
+      --primary: #232946;
+      --secondary: #eebbc3;
+      --accent: #006ffd;
+      --bg: #f7f9fa;
+      --white: #fff;
+      --gray: #e5e5e5;
+      --radius: 14px;
+      --shadow: 0 2px 12px rgba(35, 41, 70, 0.08);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      scroll-behavior: smooth;
+    }
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1.2rem 0;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav button, nav a.button, .button {
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem 1.5rem;
+      margin: 0 0.2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      outline: none;
+      display: inline-block;
+    }
+    nav button:hover, nav a.button:hover, .button:hover {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+    nav .github-link {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--secondary);
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--white) 100%);
+      padding: 3.5rem 0 2.5rem 0;
+      text-align: center;
+    }
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+    .hero-text {
+      flex: 1 1 340px;
+      min-width: 320px;
+    }
+    .hero-text h1 {
+      font-size: 2.7rem;
+      margin-bottom: 1.1rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .button.whitepaper-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0.5rem 0.5rem 0 0.5rem;
+      transition: background 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .button.whitepaper-btn:hover {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+    .cta.secondary {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .cta.secondary:hover {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+    .hero-image {
+      flex: 1 1 280px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 340px;
+      width: 90%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    /* Features */
+    .features {
+      background: var(--white);
+      padding: 2.5rem 0;
+    }
+    .features h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .feature-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.7rem 1.2rem;
+      text-align: center;
+      min-width: 240px;
+      max-width: 320px;
+      transition: transform 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px) scale(1.03);
+    }
+    .feature-card h3 {
+      margin-top: 0;
+    }
+    /* Token Section */
+    .optik-token-section {
+      background: #fff;
+      padding: 2.5rem 0;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+    .token-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .token-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--secondary);
+      background: var(--bg);
+    }
+    #contract-address {
+      font-family: monospace;
+      background: var(--bg);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-right: 0.5rem;
+      word-break: break-all;
+    }
+    .copy-btn {
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      border-radius: 25px;
+      padding: 0.4rem 1.2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+    .wallet-actions {
+      margin: 1.2rem 0;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .dex-links {
+      margin-top: 1.7rem;
+    }
+    .dex-badge {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      background: var(--primary);
+      transition: background 0.2s;
+    }
+    .dex-badge.uniswap { background: #ff007a; }
+    .dex-badge.pancakeswap { background: #27a9e0; }
+    .dex-badge:hover { opacity: 0.85; }
+    /* Transaction Fee Notice */
+    .fee-notice {
+      background: #ffe8e8;
+      color: #b10000;
+      border: 2px solid #ffb3b3;
+      border-radius: var(--radius);
+      padding: 1.2rem 1rem;
+      margin: 2rem 0 1.5rem 0;
+      font-size: 1.1rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    /* Mining, Airdrop, Rewards, Staking */
+    .section-highlight {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.2rem 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .section-highlight h2 {
+      margin-top: 0;
+    }
+    .section-highlight .button, .section-highlight a.button {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+    .section-highlight .info {
+      font-size: 1.08rem;
+      margin: 0.6rem 0 1.2rem 0;
+      color: #444;
+    }
+    /* News */
+    .news {
+      background: var(--bg);
+      padding: 2.5rem 0;
+    }
+    .news h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .news-feed {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .news-article {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(35, 41, 70, 0.06);
+      margin-bottom: 1.2rem;
+      padding: 1rem 1.2rem;
+    }
+    .news-article a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .news-article a:hover {
+      text-decoration: underline;
+    }
+    .news-meta {
+      font-size: 0.92rem;
+      color: #888;
+    }
+    /* Investor AI */
+    .investor-ai {
+      background: #fff;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    #investor-ai iframe {
+      margin-top: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--secondary);
+    }
+    /* Contact */
+    .contact {
+      background: var(--bg);
+      padding: 2.5rem 0;
+    }
+    .contact h2 {
+      text-align: center;
+    }
+    .contact-form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.7rem 2rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .features-grid, .wallet-actions, .token-header {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: flex-start;
+      }
+      .hero-content {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">Optik Token</div>
+      <nav>
+        <button onclick="scrollToSection('features')">Features</button>
+        <button onclick="scrollToSection('optik-token')">Optik Token</button>
+        <button onclick="scrollToSection('mining')">Mining</button>
+        <button onclick="scrollToSection('airdrop')">Airdrop</button>
+        <button onclick="scrollToSection('rewards')">Rewards</button>
+        <button onclick="scrollToSection('staking')">Staking</button>
+        <button onclick="scrollToSection('news')">Live News</button>
+        <button onclick="scrollToSection('investor-ai')">Investor AI</button>
+        <button onclick="scrollToSection('contact')">Contact</button>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME/optik_token" target="_blank" class="github-link">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Optik Token (OPTIK)<br>Deflationary DeFi for Everyone</h1>
+          <p>
+            90% burned at launch. 3% fee for development. Free AI. <br>
+            <strong>Mining, staking, airdrop, rewards, and a free GPT-powered AI for all investors.</strong>
+          </p>
+          <a href="whitepaper.pdf" class="button whitepaper-btn" target="_blank" rel="noopener">
+            📄 Read the White Paper
+          </a>
+          <button class="cta secondary" onclick="scrollToSection('investor-ai')">Try Free AI Assistant</button>
+        </div>
+        <div class="hero-image">
+          <img src="https://undraw.co/api/illustrations/crypto" alt="Crypto illustration" />
+        </div>
+      </div>
+    </section>
+    <!-- TRANSACTION FEE NOTICE -->
+    <div class="container fee-notice">
+      <span>🚨 <b>Every OPTIK transfer incurs a 3% fee automatically sent to the development wallet for ongoing platform growth, security, and community initiatives.</b></span>
+    </div>
+    <!-- FEATURES -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Platform Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Open Source</h3>
+            <p>Transparent codebase on GitHub. Community contributions are welcome and rewarded.</p>
+            <a href="https://github.com/YOUR_GITHUB_USERNAME/optik_token" target="_blank" class="button">View on GitHub</a>
+          </div>
+          <div class="feature-card">
+            <h3>DeFi Tools</h3>
+            <p>Staking, yield farming, and liquidity pools with real-time analytics and rewards.</p>
+            <button class="button" onclick="scrollToSection('staking')">Go to Staking</button>
+          </div>
+          <div class="feature-card">
+            <h3>AI Assistant (Free)</h3>
+            <p>Ask our GPT-powered AI anything about Optik, DeFi, or investing. 100% free for all users.</p>
+            <button class="button" onclick="scrollToSection('investor-ai')">Try Now</button>
+          </div>
+          <div class="feature-card">
+            <h3>Mining</h3>
+            <p>Mine OPTIK tokens directly from your browser or mining rig. Fair, open, and secure.</p>
+            <button class="button" onclick="scrollToSection('mining')">Start Mining</button>
+          </div>
+          <div class="feature-card">
+            <h3>Airdrop</h3>
+            <p>Claim free OPTIK as an early supporter or community participant. On-chain and transparent.</p>
+            <button class="button" onclick="scrollToSection('airdrop')">Claim Airdrop</button>
+          </div>
+          <div class="feature-card">
+            <h3>Rewards</h3>
+            <p>Earn OPTIK through staking, mining, liquidity, and referrals. View and claim anytime.</p>
+            <button class="button" onclick="scrollToSection('rewards')">View Rewards</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- OPTIK TOKEN SECTION -->
+    <section id="optik-token" class="optik-token-section">
+      <div class="container">
+        <div class="token-header">
+          <img src="optik-logo.svg" alt="Optik Token Logo" class="token-logo">
+          <div>
+            <h2>Optik Token (OPTIK)</h2>
+            <p>
+              <strong>Contract Address:</strong>
+              <span id="contract-address">0x8D2e19eeA1286680eEAd323063e569197454d3CB</span>
+              <button onclick="copyContractAddress()" class="button copy-btn">Copy</button>
+            </p>
+            <p>
+              <strong>Circulating Supply:</strong> 100,000,000 OPTIK<br>
+              <strong>Burned at Launch:</strong> 900,000,000 OPTIK<br>
+              <strong>Decimals:</strong> 18
+            </p>
+          </div>
+        </div>
+        <div class="wallet-actions">
+          <button class="button" onclick="connectWallet()">Connect Wallet</button>
+          <button class="button" onclick="addTokenToWallet()">Add OPTIK to Wallet</button>
+        </div>
+        <div class="dex-links">
+          <h3>Trade OPTIK on DEXs</h3>
+          <a href="https://app.uniswap.org/#/swap?outputCurrency=0x8D2e19eeA1286680eEAd323063e569197454d3CB" target="_blank" class="dex-badge uniswap">Uniswap</a>
+          <a href="https://pancakeswap.finance/swap?outputCurrency=0xd545bb53749c8b13d4e936587239fcb69dd8ed4c" target="_blank" class="dex-badge pancakeswap">PancakeSwap</a>
+        </div>
+      </div>
+    </section>
+    <!-- MINING SECTION -->
+    <section id="mining" class="section-highlight">
+      <div class="container">
+        <h2>Mining</h2>
+        <div class="info">
+          Mine OPTIK tokens directly from your browser or connect your mining rig.<br>
+          <strong>Decentralized, transparent, and fair mining rewards for all participants.</strong>
+        </div>
+        <button class="button" onclick="alert('Mining feature coming soon!')">Start Mining</button>
+      </div>
+    </section>
+    <!-- AIRDROP SECTION -->
+    <section id="airdrop" class="section-highlight">
+      <div class="container">
+        <h2>Airdrop</h2>
+        <div class="info">
+          Claim your free OPTIK tokens! Participate in our community and social campaigns to be eligible.<br>
+          <strong>Early supporters get exclusive airdrop rewards.</strong>
+        </div>
+        <button class="button" onclick="alert('Airdrop claim coming soon!')">Claim Airdrop</button>
+      </div>
+    </section>
+    <!-- REWARDS SECTION -->
+    <section id="rewards" class="section-highlight">
+      <div class="container">
+        <h2>Rewards</h2>
+        <div class="info">
+          Earn OPTIK by staking, mining, providing liquidity, or referring new users.<br>
+          <strong>Check your wallet for rewards or participate now to start earning.</strong>
+        </div>
+        <button class="button" onclick="alert('Rewards dashboard coming soon!')">View Rewards</button>
+      </div>
+    </section>
+    <!-- STAKING SECTION -->
+    <section id="staking" class="section-highlight">
+      <div class="container">
+        <h2>Staking</h2>
+        <div class="info">
+          Stake your OPTIK tokens to earn passive income and help secure the network.<br>
+          <strong>Flexible lockups, competitive APY, and instant rewards.</strong>
+        </div>
+        <a href="https://staking.optiktoken.com" class="button" target="_blank">Go to Staking</a>
+      </div>
+    </section>
+    <!-- LIVE NEWS FEED -->
+    <section id="news" class="news">
+      <div class="container">
+        <h2>Latest Crypto & DeFi News</h2>
+        <div id="news-feed" class="news-feed">
+          <p>Loading news...</p>
+        </div>
+      </div>
+    </section>
+    <!-- CUSTOM GPT AI CHAT -->
+    <section id="investor-ai" class="investor-ai">
+      <div class="container">
+        <h2>Free GPT-Powered Investor AI</h2>
+        <p>
+          Every Optik investor gets unlimited, free access to our GPT-powered AI assistant.<br>
+          Ask anything about DeFi, OPTIK, staking, mining, airdrops, or crypto basics.<br>
+          <b>No fees, no limits, no login required.</b>
+        </p>
+        <div id="gpt-widget">
+          <!-- Example: CustomGPT.ai widget (replace with your own) -->
+          <iframe src="https://app.customgpt.ai/widget/YOUR_WIDGET_ID" width="100%" height="400" style="border:1px solid #ccc;border-radius:12px;"></iframe>
+        </div>
+        <small>Powered by AI. Please verify all investment advice independently.</small>
+      </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      &copy; 2025 Optik Token. Open Source on <a href="https://github.com/YOUR_GITHUB_USERNAME/optik_token" target="_blank">GitHub</a>.
+    </div>
+  </footer>
+  <script>
+    // Smooth scroll to section
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+    // Copy contract address to clipboard
+    function copyContractAddress() {
+      const address = document.getElementById('contract-address').innerText;
+      navigator.clipboard.writeText(address);
+      alert('Contract address copied!');
+    }
+    // Example MetaMask wallet connect (for EVM chains)
+    async function connectWallet() {
+      if (window.ethereum) {
+        try {
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          alert('Wallet connected!');
+        } catch (err) {
+          alert('Wallet connection failed.');
+        }
+      } else {
+        alert('MetaMask not detected. Please install MetaMask.');
+      }
+    }
+    // Add token to MetaMask (EVM)
+    async function addTokenToWallet() {
+      if (window.ethereum) {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20',
+              options: {
+                address: '0x8D2e19eeA1286680eEAd323063e569197454d3CB', // OPTIK
+                symbol: 'OPTIK',
+                decimals: 18,
+                image: 'https://yourdomain.com/optik-logo.svg',
+              },
+            },
+          });
+        } catch (err) {
+          alert('Could not add token.');
+        }
+      } else {
+        alert('MetaMask not detected.');
+      }
+    }
+    // Example: Fetch latest news using NewsAPI (replace with your own API key)
+    async function loadNews() {
+      const apiKey = 'YOUR_NEWSAPI_KEY'; // Get a key from https://newsapi.org/
+      const url = `https://newsapi.org/v2/everything?q=crypto%20OR%20defi&sortBy=publishedAt&language=en&pageSize=5&apiKey=${apiKey}`;
+      try {
+        const res = await axios.get(url);
+        const articles = res.data.articles;
+        let html = '';
+        articles.forEach(article => {
+          html += `
+            <div class="news-article">
+              <a href="${article.url}" target="_blank"><strong>${article.title}</strong></a>
+              <p>${article.description || ''}</p>
+              <span class="news-meta">${new Date(article.publishedAt).toLocaleString()} &middot; ${article.source.name}</span>
+            </div>
+          `;
+        });
+        document.getElementById('news-feed').innerHTML = html;
+      } catch (e) {
+        document.getElementById('news-feed').innerHTML = '<p>Unable to load news at this time.</p>';
+      }
+    }
+    loadNews();
+  </script>
+</body>
+</html>
