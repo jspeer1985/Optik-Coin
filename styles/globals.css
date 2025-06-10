@@ -1,0 +1,25 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/typography';
+@import 'tailwindcss/forms';
+@import 'tailwindcss/aspect-ratio';
+
+/* Custom Styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.transition {
+  transition: background-color 0.3s ease;
+}
